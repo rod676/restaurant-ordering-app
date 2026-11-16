@@ -56,12 +56,18 @@ body {
     line-height: 1.2;
 }
 
-.menu-item {
+.menu-section{
+    display: flex;
+    justify-content: space-between;
     position: relative;
     min-height: 190px;
     padding: 86px 40px 35px 120px;
     background: #fff;
     border-bottom: 1px solid #d2d2d2;
+}
+
+#addbtn{
+    border: radius 50%; ;
 }
 
 .menu-item__name {
@@ -73,7 +79,7 @@ body {
 
 .menu-item__emoji {
     position: absolute;
-    top: 45px;
+    top: 80px;
     left: 40px;
     margin: 0;
     font-family: "Segoe UI Emoji", "Apple Color Emoji", sans-serif;
