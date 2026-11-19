@@ -32,6 +32,7 @@ const cartContainer = document.getElementById('cart');
 document.addEventListener('click', (e)=> {
 
     const addButton = e.target.closest('.add-btn')
+    const orderBtn = e.target.closest('order-btn')
 
     if (addButton) {
        const itemId = addButton.getAttribute('data-id')
@@ -39,6 +40,9 @@ document.addEventListener('click', (e)=> {
        orderArr.push(selectedMeal)
 
         getOderHtml()
+    }
+    else if(orderBtn){
+        
     }
     
 })
