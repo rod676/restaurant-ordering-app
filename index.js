@@ -44,20 +44,24 @@ document.addEventListener('click', (e)=> {
 })
 
 function getOderHtml(){
+    
     if (orderArr.length === 0){
     cartContainer.innerHTML = ''}
-    else{
+    else {
             const orderContainer = orderArr.map((item) =>{
             const {name,price, id}= item
             return `
                 <div class="order-item"> 
                         <div>
-                            <span class="item-name">${item.name}</span>
-                            <button class= 'remove-btn' data-remove='${item.id}'>Remove</button>
+                            <span class="item-name">${name}</span>
+                            <button class= 'remove-btn' data-remove='${id}'>Remove</button>
                         </div>  
-                        <span class="item-price">$${item.price}</span>  
+                        <span class="item-price">€${price}</span>  
+                </div>
                     `
         }).join('')
+
+        const totalPrice = orderArr.reduce((total, item) => total + item.price, 0)
 
          cartContainer.innerHTML = 
          `
@@ -65,6 +69,10 @@ function getOderHtml(){
                                 <h2> Your Order</h2>
                                 <div class= "order-itens-list">
                                     ${orderContainer}
+                                </div>
+                                <div class='Total'>
+                                <span class="total-name">Total: </span>
+                                <span class="total-price">€${totalPrice}</span> 
                                 </div>
                             </div>
         `
