@@ -1,9 +1,9 @@
 const menuArray = [
     {
-        name: "Pizza",
+        name: "Pizza Pepperoni",
         ingredients: ["pepperoni", "mushrom", "mozarella"],
         id: 0,
-        price: 14,
+        price: 4,
         emoji: "🍕"
     },
     {
@@ -13,12 +13,19 @@ const menuArray = [
         emoji: "🍔",
         id: 1
     },
-        {
+    {
         name: "Beer",
         ingredients: ["grain, hops, yeast, water"],
         price: 12,
         emoji: "🍺",
         id: 2
+    },
+    {
+        name: "Pizza Spinat",
+        ingredients: ["Spinat", "Feta Käse", "Rote Zwiebeln"],
+        id: 3,
+        price: 4,
+        emoji: "🍕"
     }
 ]
 
