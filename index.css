@@ -62,10 +62,19 @@ body {
     position: relative;
     min-height: 190px;
     padding: 86px 40px 35px 120px;
+    margin: 0;
     background: #fff;
-    border-bottom: 1px solid #d2d2d2;
+    border-bottom: none;
 }
-
+.menu-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 64px;
+    right: 64px;
+    height: 1px;
+    background: #d2d2d2;
+}
 #addbtn{
     border: radius 50%; ;
 }
@@ -109,11 +118,13 @@ body {
 .order-item{
     display: flex;
     justify-content: space-between;
+    padding: 16px;
+    background: #fff;
+
 }
 
-.order-item, .cart-wrapper{
+.cart-wrapper{
     background: #fff;
-    border-bottom: 1px solid #d2d2d2;
 }
 
 
@@ -125,5 +136,47 @@ body {
 .remove-btn{
     background: none;
     color: #8b8b8b;
+    border: none;
+}
+
+.item-price{
+    padding-right: 48px;
+}
+
+.Total{
+    display: flex;
+    justify-content: space-between; 
+    padding: 16px;
+    position: relative;
+}
+
+.Total::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 64px;
+    right: 64px;
+    height: 3px;
+    background: #111;
+}
+
+.Total span{
+    top: 34px;
+    font-size: 28px;
+    line-height: 1;
+}
+
+.total-price{
+    padding-right: 48px;
+}
+
+#order-btn{
+    display: block;
+    margin: 0 auto;
+    background-color: #A78BFA;
+    color: #fff;
+    padding: 16px 156px;
+    font-size: 28px;
+    font-family: Georgia, "Times New Roman", serif;
     border: none;
 }
