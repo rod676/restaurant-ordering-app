@@ -15,15 +15,14 @@
             </header>
             <main id="menu" aria-label="Menu"></main>
             <section id= "cart"></section>
-            <button id="order-btn">Complete Order</button>
         </div>
         <form class="payment-cart" id="payment-cart">
                 <h1>Enter card details</h1>
-                <input type="text" placeholder="Enter your name" required>
+                <input type="text" id="client-name" placeholder="Enter your name" required>
                 <input type="number" placeholder="Enter cart number" required minlength="16" maxlength="16">
                 <input type="number" placeholder="Enter CVV" required maxlength="3">
             
-            <input type="submit" class="pay-btn" value="Pay">
+            <button type="submit" id="pay-btn" class="pay-btn">Pay</button>
         </form>
         
        

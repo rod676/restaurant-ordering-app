@@ -26,12 +26,13 @@ document.getElementById('menu').innerHTML = menuHtml
 
 const cartContainer = document.getElementById('cart');  
 const paymentCard = document.getElementById('payment-cart')
-const orderBtn = document.getElementById('order-btn')
-
+const payBtn = document.getElementById('pay-btn')
+const clientName = document.getElementById('client-name')
 
 document.addEventListener('click', (e)=> {
 
     const addButton = e.target.closest('.add-btn')
+    const orderButton = e.target.closest('#order-btn')
 
     if (addButton) {
        const itemId = addButton.getAttribute('data-id')
@@ -40,12 +41,13 @@ document.addEventListener('click', (e)=> {
 
         getOderHtml()
     }
+
+    if (orderButton) {
+        paymentCard.style.display = 'flex'
+    }
     
 })
 
-
-
-orderBtn.addEventListener('click', ()=> paymentCard.style.display = 'flex')
 
 function getOderHtml(){
     
@@ -78,9 +80,16 @@ function getOderHtml(){
                                 <span class="total-name">Total: </span>
                                 <span class="total-price">€${totalPrice}</span> 
                                 </div>
+                                <button id="order-btn">Complete Order</button>
                             </div>
         `
     }
 
    
 }
+
+paymentCard.addEventListener('submit', (e)=>{
+    e.preventDefault()
+    paymentCard.style.display = 'none'
+    cartContainer.innerHTML = `<p class='confirmation' >Thanks, ${clientName.value}! Your order is on its way!</p>`
+})

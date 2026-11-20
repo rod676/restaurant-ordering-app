@@ -235,3 +235,11 @@ input[type="number"]::-webkit-outer-spin-button {
     font-family: Verdana, Tahoma, sans-serif;
 
 }
+
+.confirmation{
+    background-color: #DDD6FE;
+    color: #4C1D95;
+    padding: 16px;
+    text-align: center;
+    font-size: 32px;
+}
