@@ -104,4 +104,5 @@ paymentCard.addEventListener('submit', (e)=>{
     e.preventDefault()
     paymentCard.style.display = 'none'
     cartContainer.innerHTML = `<p class='confirmation' >Thanks, ${clientName.value}! Your order is on its way!</p>`
+    setTimeout(() => window.location.reload(), 5000)
 })
