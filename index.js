@@ -33,12 +33,23 @@ document.addEventListener('click', (e)=> {
 
     const addButton = e.target.closest('.add-btn')
     const orderButton = e.target.closest('#order-btn')
+    const removeItem = e.target.closest('.remove-btn')
 
     if (addButton) {
        const itemId = addButton.getAttribute('data-id')
        const selectedMeal = menuArray.find(meal => meal.id == itemId)
        orderArr.push(selectedMeal)
 
+        getOderHtml()
+    }
+
+    if (removeItem){
+        const removeId = removeItem.getAttribute('data-remove')
+        const itemIdex = orderArr.findIndex(item => item.id == removeId)
+        
+        if(itemIdex > -1){
+            orderArr.splice(itemIdex, 1)
+        }
         getOderHtml()
     }
 
@@ -87,6 +98,7 @@ function getOderHtml(){
 
    
 }
+
 
 paymentCard.addEventListener('submit', (e)=>{
     e.preventDefault()
